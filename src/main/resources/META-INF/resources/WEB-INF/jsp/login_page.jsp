@@ -6,10 +6,11 @@
 	<body>
 		<h2>LOGIN</h2>
 		<h4>Kindly enter the credentials</h4>
+		<h5>${error_msg}</h5>
 		<form method = "POST">
 			Name: <input type = "text" name = "name">
 			Password: <input type = "password" name = "password"> 
 			<input type = "submit">		
 		</form>
 	</body>
-</html>
+</html> 
