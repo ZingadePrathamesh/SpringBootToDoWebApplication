@@ -15,6 +15,7 @@
 			
 			<form:form method = "POST" modelAttribute="todo">
 				Description: <form:input type = "text" path = "description" required="required"/>
+				<form:errors class = "text-warning" path = "description"/>
 				<form:input type = "hidden" path = "id"/>
 				<form:input type = "hidden" path = "done"/>
 				<input type= "submit" class = "btn btn-primary">
