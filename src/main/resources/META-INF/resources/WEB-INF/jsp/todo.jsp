@@ -14,8 +14,19 @@
 			<h1>Add Todo</h1>
 			
 			<form:form method = "POST" modelAttribute="todo">
-				Description: <form:input type = "text" path = "description" required="required"/>
-				<form:errors class = "text-warning" path = "description"/>
+				<fieldset class = "mb-3">
+					<form:label path="description">Description</form:label>
+					<form:input type = "text" path = "description" required="required"/>
+					<form:errors class = "text-warning" path = "description"/>
+				</fieldset>
+				
+				<fieldset class = "mb-3">
+					<form:label path="targetDate">Target Date</form:label>
+					<form:input type = "text" path = "targetDate" required="required"/>
+					<form:errors class = "text-warning" path = "targetDate"/>
+				</fieldset>
+				
+				
 				<form:input type = "hidden" path = "id"/>
 				<form:input type = "hidden" path = "done"/>
 				<input type= "submit" class = "btn btn-primary">
