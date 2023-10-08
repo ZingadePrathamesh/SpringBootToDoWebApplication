@@ -1,11 +1,5 @@
-<html>
-	<head>
-		<link href= "webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel = "stylesheet">
-		<title>Welcome</title>
-	</head>
-	
-	<body>
-		<div class = "container">
+<%@ include file = "common/navbar.jspf" %>
+<%@ include file = "common/header.jspf" %>
 		
 			<h1>Welcome to the application, ${name}</h1>
 			<h3>user: ${name}</h3>
