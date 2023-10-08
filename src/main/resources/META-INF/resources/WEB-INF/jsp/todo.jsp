@@ -6,6 +6,7 @@
 <html>
 	<head>
 		<link href= "webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel = "stylesheet">
+		<link href= "webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel = "stylesheet">
 		<title>Welcome</title>
 	</head>
 	
@@ -37,5 +38,11 @@
 		
 		<script src = "webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 		<script src = "webjars/jquery/3.7.1/jquery.min.js"></script>
+		<script src = "webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+		<script type="text/javascript">
+		$('#targetDate').datepicker({
+		    format: 'yyyy-mm-dd',
+		});
+		</script>
 	</body>
 </html>
