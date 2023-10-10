@@ -15,6 +15,8 @@ public class SpringSecurityConfig {
 	
 	@Bean
 	public InMemoryUserDetailsManager createUserDetailsManager() {
+		
+		
 		Function<String, String> passWordEncoder =
 				input -> passwordEncoder().encode(input);
 				
