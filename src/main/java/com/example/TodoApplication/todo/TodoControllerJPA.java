@@ -61,13 +61,15 @@ public class TodoControllerJPA {
 		}
 		
 		String username = getLoggedInUserName();
+		todo.setUsername(username);
+		todoRepository.save(todo);
 		todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
 		return "redirect:list-todos";
 	}
 	
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int id) {
-		
+		todoRepository.deleteById(id);
 		todoService.deleteById(id);
 		return "redirect:list-todos";
 	}
