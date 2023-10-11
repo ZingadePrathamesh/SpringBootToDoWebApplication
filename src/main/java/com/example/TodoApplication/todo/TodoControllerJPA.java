@@ -1,6 +1,7 @@
 package com.example.TodoApplication.todo;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,21 +15,26 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoControllerJPA {
 
-	public TodoController(TodoService todoService) {
+	public TodoControllerJPA(TodoService todoService , TodoRepository todoRepository) {
 		super();
 		this.todoService = todoService;
+		this.todoRepository = todoRepository;
 	}
 
 	private TodoService todoService;
+	private TodoRepository todoRepository;
+	
 
 	@RequestMapping("list-todos")
 	public String listTodos(ModelMap model) {
 		String username = getLoggedInUserName();
-		model.addAttribute("todos", todoService.getTodosByUsername(username));
+		
+		List<Todo> todos = todoRepository.findByUsername(username);
+		model.addAttribute("todos", todos);
 		return "listTodos";
 	}
 
